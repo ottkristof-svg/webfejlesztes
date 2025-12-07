@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Tippek &amp; merülés-tervező - Merülés &amp; Tenger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tippek kezdő búvároknak és egy egyszerű merülés-költség kalkulátor.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-mark">M&amp;T</span>
+    <span class="logo-text">Merülés &amp; Tenger</span>
+  </div>
+  <button class="nav-toggle" aria-label="Menü váltása">☰</button>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="dives.html">Merülőhelyek</a></li>
+      <li><a href="tips.html" class="active">Tippek &amp; kalkulátor</a></li>
+      <li><a href="contact.html">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Tippek kezdő búvároknak</h1>
+    <p>Néhány alapelv, amit érdemes betartani, mielőtt víz alá merülnél.</p>
+  </section>
+
+  <section class="tips-section">
+    <article>
+      <h2>1. Biztonság mindenek felett</h2>
+      <p>Mindig merülj partnerrel, tartsd be az oktatód iránymutatásait, és soha ne merülj a képzettséged felett.</p>
+    </article>
+    <article>
+      <h2>2. Felszerelés karbantartása</h2>
+      <p>A jól karbantartott felszerelés életet menthet. Ellenőrizd a palackot, reduktort, BCD-t és a súlyodat minden merülés előtt.</p>
+    </article>
+    <article>
+      <h2>3. Tervezés &amp; utóellenőrzés</h2>
+      <p>Mindig legyen merülési terved, és ragaszkodj hozzá - beleértve a maximális mélységet és az időtartamot.</p>
+    </article>
+  </section>
+
+  <section class="calculator-section">
+    <h2>Merülés-költség kalkulátor</h2>
+    <p>Számold ki egy rövid búvárút várható költségét (egyszerűsített, fiktív adatokkal).</p>
+
+    <form id="costCalculator" class="calculator-form">
+      <div class="form-row">
+        <label for="days">Merülés napjainak száma</label>
+        <input type="number" id="days" name="days" min="1" max="14" value="3" required>
+      </div>
+      <div class="form-row">
+        <label for="divesPerDay">Merülések száma naponta</label>
+        <input type="number" id="divesPerDay" name="divesPerDay" min="1" max="4" value="2" required>
+      </div>
+      <div class="form-row">
+        <label for="pricePerDive">Ár merülésenként (EUR)</label>
+        <input type="number" id="pricePerDive" name="pricePerDive" min="0" step="1" value="55" required>
+      </div>
+      <div class="form-row">
+        <label for="equipmentPrice">Felszerelésbérlés naponta (EUR)</label>
+        <input type="number" id="equipmentPrice" name="equipmentPrice" min="0" step="1" value="15" required>
+      </div>
+      <div class="form-row">
+        <label for="otherCosts">Egyéb napi költség (EUR)</label>
+        <input type="number" id="otherCosts" name="otherCosts" min="0" step="1" value="20">
+      </div>
+      <button type="submit" class="btn primary">Költség kiszámítása</button>
+    </form>
+
+    <div id="calcResult" class="calc-result" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <small>&copy; <span id="year"></span> Merülés &amp; Tenger - oktatási célú beadandó</small>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
